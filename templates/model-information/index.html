@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Model Info</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='login/images/icons/favicon.ico')}}"/>
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='colorlib-wizard-21/css/raleway-font.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='colorlib-wizard-21/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css')}}">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='colorlib-wizard-21/css/style.css')}}"/>
+	<style>
+		#loading {
+			position: fixed;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			opacity: 0.7;
+			background-color: #fff;
+			z-index: 99;
+			visibility: hidden;
+		}
+
+		#loading-image {
+			z-index: 100;
+		}
+		.loader {
+			border: 8px solid #f3f3f3;
+			border-radius: 50%;
+			border-top: 8px solid #000000;
+			width: 80px;
+			height: 80px;
+			-webkit-animation: spin 2s linear infinite; /* Safari */
+			animation: spin 2s linear infinite;
+		}
+
+			/* Safari */
+		@-webkit-keyframes spin {
+			0% { -webkit-transform: rotate(0deg); }
+			100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-2">
+			{% include "sidebar-02/index.html" %}
+		</div>
+		<div class="col-md-10">
+			<div class="container">
+                <div style="padding: 20px;">
+                    <h2 class="mb-4">Model Information</h2>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Dataset Information
+                            </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Breast cancer Detection dataset</strong> 
+                                Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe characteristics of the cell nuclei present in the image.
+                                <ol>
+                                    <li>A lump or thickening in the breast or underarm area.</li>
+                                    <li>Changes in the size, shape, or appearance of the breast.</li>
+                                    <li>Changes in the skin over the breast, such as dimpling.</li>
+                                    <li>Nipple changes, such as inversion, redness, or discharge.</li>
+                                </ol>
+                                The causes of breast cancer are not entirely understood, but various risk factors can contribute, such as genetics, family history, age, hormonal factors, lifestyle, and environmental factors.
+                                Early detection through screening (such as mammograms) can greatly improve the chances of successful treatment. Treatments for breast cancer can include surgery, chemotherapy, radiation therapy, hormone therapy, and targeted therapy, among other options, depending on the type and stage of the cancer.
+                                Awareness, early detection, and advancements in research and treatment have improved the survival rates for many people diagnosed with breast cancer. It's important for individuals to perform regular breast self-exams, attend clinical screenings as recommended, and consult with healthcare professionals regarding any concerning changes in their breasts.
+                            </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Features
+                            </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Because benign tumors are benign,</strong>  the doctors could decide not to remove the lump altogether. Inform your doctor if you are uncomfortable, irritated, or feeling pressure so she may arrange to have it removed and make you feel better.
+                            </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Target Column
+                            </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Because they penetrate surrounding tissue and inflict damage,</strong> malignant tumors are aggressive and cancerous. A biopsy is carried out by the physician when a tumor is thought to be malignant in order to assess the tumor's aggressiveness or severity.
+                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+	
+	<script src="{{ url_for('static', filename='colorlib-wizard-21/js/jquery-3.3.1.min.js')}}"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script src="{{ url_for('static', filename='colorlib-wizard-21/js/jquery.steps.js')}}"></script>
+	<script src="{{ url_for('static', filename='colorlib-wizard-21/js/main.js')}}"></script>
+
+	<script>
+		// $(document).ready(function() {
+		// 	$("#loading").hide();
+		// 	$('#predict_loader').css('visibility', 'hidden');
+		// });
+
+		$('#form-register').submit(function() {
+			$("#loading").show();
+			$('#predict_loader').css('visibility', 'visible');
+		});
+	</script>
+</body>
+</html>

@@ -1,51 +1,52 @@
-<html>
-<head>
-<style>
-.button {
-background-color: #23b83c;
-	border: 2px solid #020353;
-	color: whitesmoke;
-	padding: 0.5em 0.5em;
-	text-align: center;
-	text-decoration: none;
-	font-size: 1em;
-	display: inline-block;
-	width: 18%;
-	border-radius: 5px;
-	box-shadow: 3px 3px 8px 0 #000; 
-}
-body {
-	/* background-image: url("{{url_for('static', filename='background.jpg')}}");
-	background-repeat: no-repeat;
-	background-size: 100% 100%; */
-}
-h1{
-   background-color: Green;
-  color: white;
-}
-h3{
-   background-color: green;
-  color: white;
-}
+<h2 class="mb-4">Breast Cancer</h2>
+			<div class="accordion" id="accordionExample">
+<div class="accordion-item">
+	<h2 class="accordion-header" id="headingOne">
+	<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		What is Breast Cancer
+	</button>
+	</h2>
+	<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+	<div class="accordion-body">
+		<strong>Breast cancer is a type of cancer</strong> 
+			that develops in the cells of the breast. It is the most common cancer among women worldwide, but it can also affect men, although it's rare.
+		It usually begins in the milk ducts (ductal carcinoma) or the lobules (lobular carcinoma) of the breast. Over time, cancer cells can invade nearby healthy breast tissue and, in advanced stages, spread to other parts of the body.
+		Symptoms of breast cancer may include:
+		<ol>
+			<li>A lump or thickening in the breast or underarm area.</li>
+			<li>Changes in the size, shape, or appearance of the breast.</li>
+			<li>Changes in the skin over the breast, such as dimpling.</li>
+			<li>Nipple changes, such as inversion, redness, or discharge.</li>
+		</ol>
+		The causes of breast cancer are not entirely understood, but various risk factors can contribute, such as genetics, family history, age, hormonal factors, lifestyle, and environmental factors.
+		Early detection through screening (such as mammograms) can greatly improve the chances of successful treatment. Treatments for breast cancer can include surgery, chemotherapy, radiation therapy, hormone therapy, and targeted therapy, among other options, depending on the type and stage of the cancer.
+		Awareness, early detection, and advancements in research and treatment have improved the survival rates for many people diagnosed with breast cancer. It's important for individuals to perform regular breast self-exams, attend clinical screenings as recommended, and consult with healthcare professionals regarding any concerning changes in their breasts.
+	</div>
+	</div>
+</div>
+<div class="accordion-item">
+	<h2 class="accordion-header" id="headingTwo">
+	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		Benign Tumors
+	</button>
+	</h2>
+	<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+	<div class="accordion-body">
+		<strong>Because benign tumors are benign,</strong>  the doctors could decide not to remove the lump altogether. Inform your doctor if you are uncomfortable, irritated, or feeling pressure so she may arrange to have it removed and make you feel better.
+	</div>
+	</div>
+</div>
+<div class="accordion-item">
+	<h2 class="accordion-header" id="headingThree">
+	<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		Malignant tumors
+	</button>
+	</h2>
+	<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+	<div class="accordion-body">
+		<strong>Because they penetrate surrounding tissue and inflict damage,</strong> malignant tumors are aggressive and cancerous. A biopsy is carried out by the physician when a tumor is thought to be malignant in order to assess the tumor's aggressiveness or severity.
 
-
-</style>
-</head>
-	<body>
-		<center>
-
-
-			<h1>Breast Cancer Detection</h1>
-			<pre>
-				<form action="{{ url_for('predict')}}"method="post">
-				<input type='text' name="area" placeholder="Area in sq. ft" required="required"/>
-
-				<button type="submit" class="button">Predict Price</button>
-				</form>
-				<textarea>
-				{{prediction_text}}
-				</textarea>
-			</pre>
-		</center>
-	</body>
-</html>
+	</div>
+	</div>
+</div>
+</div>

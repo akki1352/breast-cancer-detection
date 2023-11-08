@@ -12,6 +12,9 @@ To install flask in your system, use command
 To install sklearn in your system, use command 
 >> pip install sklearn
 
+To install pymongo in your system, use command 
+>> pip install pymongo
+
 --> Pandas
 To install Pandad in your system, use command 
 

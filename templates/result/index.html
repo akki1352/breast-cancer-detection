@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Predict Cancer</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='login/images/icons/favicon.ico')}}"/>
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='colorlib-wizard-21/css/raleway-font.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='colorlib-wizard-21/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css')}}">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='colorlib-wizard-21/css/style.css')}}"/>
+	<style>
+		#loading {
+			position: fixed;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			opacity: 0.7;
+			background-color: #fff;
+			z-index: 99;
+			visibility: hidden;
+		}
+
+		#loading-image {
+			z-index: 100;
+		}
+		.loader {
+			border: 8px solid #f3f3f3;
+			border-radius: 50%;
+			border-top: 8px solid #000000;
+			width: 80px;
+			height: 80px;
+			-webkit-animation: spin 2s linear infinite; /* Safari */
+			animation: spin 2s linear infinite;
+		}
+
+			/* Safari */
+		@-webkit-keyframes spin {
+			0% { -webkit-transform: rotate(0deg); }
+			100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="col-md-2">
+			{% include "sidebar-02/index.html" %}
+		</div>
+		<div class="col-md-10">
+			{{ result}}
+		</div>
+	</div>
+	
+	<script src="{{ url_for('static', filename='colorlib-wizard-21/js/jquery-3.3.1.min.js')}}"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script src="{{ url_for('static', filename='colorlib-wizard-21/js/jquery.steps.js')}}"></script>
+	<script src="{{ url_for('static', filename='colorlib-wizard-21/js/main.js')}}"></script>
+
+	<script>
+		// $(document).ready(function() {
+		// 	$("#loading").hide();
+		// 	$('#predict_loader').css('visibility', 'hidden');
+		// });
+	</script>
+</body>
+</html>
