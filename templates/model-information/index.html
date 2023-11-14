@@ -41,6 +41,21 @@
 			-webkit-animation: spin 2s linear infinite; /* Safari */
 			animation: spin 2s linear infinite;
 		}
+        .model_image {
+            object-fit: cover;
+        }
+
+        .model_image_feature {
+            height: 650px;
+        }
+
+        .model_image_1 {
+            height: 600px;
+            width: 900px;
+        }
+        .model_image_2 {
+            height: 600px;
+        }
 
 			/* Safari */
 		@-webkit-keyframes spin {
@@ -74,39 +89,56 @@
                             <div class="accordion-body">
                                 <strong>Breast cancer Detection dataset</strong> 
                                 Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe characteristics of the cell nuclei present in the image.
-                                <ol>
-                                    <li>A lump or thickening in the breast or underarm area.</li>
-                                    <li>Changes in the size, shape, or appearance of the breast.</li>
-                                    <li>Changes in the skin over the breast, such as dimpling.</li>
-                                    <li>Nipple changes, such as inversion, redness, or discharge.</li>
-                                </ol>
-                                The causes of breast cancer are not entirely understood, but various risk factors can contribute, such as genetics, family history, age, hormonal factors, lifestyle, and environmental factors.
-                                Early detection through screening (such as mammograms) can greatly improve the chances of successful treatment. Treatments for breast cancer can include surgery, chemotherapy, radiation therapy, hormone therapy, and targeted therapy, among other options, depending on the type and stage of the cancer.
-                                Awareness, early detection, and advancements in research and treatment have improved the survival rates for many people diagnosed with breast cancer. It's important for individuals to perform regular breast self-exams, attend clinical screenings as recommended, and consult with healthcare professionals regarding any concerning changes in their breasts.
+                                Also this dataset can be found on the UCI repository using below <link rel="stylesheet" href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29">
+
                             </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Features
-                            </button>
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Features
+                                </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>Because benign tumors are benign,</strong>  the doctors could decide not to remove the lump altogether. Inform your doctor if you are uncomfortable, irritated, or feeling pressure so she may arrange to have it removed and make you feel better.
+                                <strong>There are tatal of 32 columns in this dataset.</strong> Each image had 30 features after the mean, standard error, and "worst" or worst (mean of the three largest values) of these characteristics were calculated. Fields 3 and 23 represent the Mean Radius, Radius SE, and Worst Radius, respectively.
+                                <strong>Attribute Information:</strong>
+                                <ol>
+                                    <li>Id</li>
+                                    <li>Diagnosis: (M = malignant, B = benign)</li>
+                                    <li>3 - 32</li>
+                                    <strong>Ten real-valued features are computed for each cell nucleus:</strong>
+                                    <li>Radius: mean of distances from center to points on the perimeter</li>
+                                    <li>Texture: standard deviation of gray-scale values</li>
+                                    <li>Perimeter</li>
+                                    <li>Area</li>
+                                    <li>Smoothness: local variation in radius lengths</li>
+                                    <li>Compactness: perimeter^2 / area - 1.0</li>
+                                    <li>Concavity: severity of concave portions of the contour</li>
+                                    <li>Concave points: number of concave portions of the contour</li>
+                                    <li>Symmetry</li>
+                                    <li>Fractal dimension: "coastline approximation" - 1</li>
+                                </ol>
+                                <strong>Target columns</strong> is featured as Diagnosis which has below Class distribution
+                                <strong>Benign: </strong>357 <strong>Malignant: </strong>212
                             </div>
                             </div>
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Target Column
+                                Visualization
                             </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>Because they penetrate surrounding tissue and inflict damage,</strong> malignant tumors are aggressive and cancerous. A biopsy is carried out by the physician when a tumor is thought to be malignant in order to assess the tumor's aggressiveness or severity.
+                                <strong>Graphical distribution of target column i.e Daignosis</strong>
+                                <br><img src="{{ url_for('static', filename='model-images/target_column.png') }}" class="model_image model_image_feature"/>
+                                <br><strong>Correlation chart of all other feature columns with Diagnosis, Graph 1</strong>
+                                <br><img src="{{ url_for('static', filename='model-images/correlation_chart.png') }}" class="model_image model_image_1"/>
+                                <br><strong>Chart 2</strong>
+                                <br><img src="{{ url_for('static', filename='model-images/correlation_bar.png') }}" class="model_image model_image_2"/>
                 
                             </div>
                             </div>
